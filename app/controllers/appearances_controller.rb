@@ -26,10 +26,10 @@ class AppearancesController < ApplicationController
 
 
       if @appearance.save!
-        redirect_to posts_path
+        redirect_to user_path
       else
         #redirect_to appearance_craete_path(params[:public_uid])
-        redirect_to posts_path
+        redirect_to user_path
       end
 
   end

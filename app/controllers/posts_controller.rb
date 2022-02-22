@@ -27,14 +27,10 @@ class PostsController < ApplicationController
 
     @post.user_id = current_user.id
 
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
-        format.json { render :show, status: :created, location: @post }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    if @post.save
+      redirect_to user_path
+    else
+      redirect_to user_path
     end
   end
 

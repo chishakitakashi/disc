@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<h1>post</h1>
+
+<%= current_user.email %>
+
+<canvas id="myChart"></canvas>
+<script>
+
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+  type: 'radar',
+  data: {
+    labels: ["D", "I", "S", "C"],
+    datasets: 
+    [
+      <% @dsum = @user.posts.sum(:four) + @user.posts.sum(:seven) + @user.posts.sum(:seventeen) + @user.posts.sum(:nineteen) + @user.posts.sum(:twenty) %>// カラムのデータの合計値
+      <% @dcount=@user.posts.count(:created_at) %> 
+
+      <% @isum = @user.posts.sum(:six) + @user.posts.sum(:eight) + @user.posts.sum(:eleven) + @user.posts.sum(:fourteen) +  @user.posts.sum(:two) %>// カラムのデータの合計値
+      <% @icount=@user.posts.count(:created_at) %>
+
+      <% @ssum = @user.posts.sum(:three) + @user.posts.sum(:nine) + @user.posts.sum(:thirteen) + @user.posts.sum(:sixteen) + @user.posts.sum(:eighteen) %>// カラムのデータの合計値
+      <% @scount=@user.posts.count(:created_at) %>
+
+      <% @csum = @user.posts.sum(:first) + @user.posts.sum(:five) + @user.posts.sum(:ten) + @user.posts.sum(:twelve) + @user.posts.sum(:fifteen) %>// カラムのデータの合計値
+      <% @ccount=@user.posts.count(:created_at) %>
+        {
+        label: "テスト",
+        backgroundColor: 'rgba(122,255,129,0.2)',
+        borderColor: '#000',
+        data: [<%= @dsum.to_f/@dcount %>, <%= @isum.to_f/@icount %>, <%= @ssum.to_f/@scount %>, <%= @csum.to_f/@ccount %>]
+        },
+    ]
+  },
+  options: {
+      scale: {
+          ticks: {
+              suggestedMin: 0,
+              suggestedMax: 5
+          }
+      }
+  }
+});
+
+</script>
+
+<br>
+
+<% if user_signed_in? %>
+  <%= button_to "マイページへ",  user_path,method: :get,class:'btn btn-dark' %>
+<% end %>
+
+<%= link_to 'New Post', new_post_path %>
+
+<%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>

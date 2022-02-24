@@ -1,15 +1,6 @@
 class AppearancesController < ApplicationController
   before_action :set_appearance, only: %i[ show edit update destroy ]
-
-  # GET /appearances or /appearances.json
-  def index
-    @appearances = Appearance.all
-  end
-
-  # GET /appearances/1 or /appearances/1.json
-  def show
-  end
-
+  
   # GET /appearances/new
   def new
     @appearance = Appearance.new

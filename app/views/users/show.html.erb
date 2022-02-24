@@ -1,8 +1,15 @@
-<h1>users#show</h1>
+<h1>マイページ <%= @user.email %></h1>
+
+<%= link_to 'New Post', new_post_path %>
+
+<%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+
+<%= link_to "post一覧に戻る", posts_path %>
+
 
 <div class ="box1" >
     <div class ="box2" >
-    <h1>↓自己分析</h1>
+    <h1>自己分析</h1>
         <canvas id="myChart" width="50%"></canvas>
         <script>
 
@@ -10,24 +17,24 @@
         var myChart = new Chart(ctx, {
         type: 'radar',
         data: {
-            labels: ["D", "I", "S", "C"],
+            labels: ["D型", "I型", "S型", "C型"],
             datasets: 
             [
-            <% @dsum = @user.posts.sum(:four) + @user.posts.sum(:seven) + @user.posts.sum(:seventeen) + @user.posts.sum(:nineteen) + @user.posts.sum(:twenty) %>// カラムのデータの合計値
+            <% @dsum = @user.posts.sum(:four) + @user.posts.sum(:seven) + @user.posts.sum(:seventeen) + @user.posts.sum(:nineteen) + @user.posts.sum(:twenty) %>
             <% @dcount=@user.posts.count(:created_at) %> 
 
-            <% @isum = @user.posts.sum(:six) + @user.posts.sum(:eight) + @user.posts.sum(:eleven) + @user.posts.sum(:fourteen) +  @user.posts.sum(:two) %>// カラムのデータの合計値
+            <% @isum = @user.posts.sum(:six) + @user.posts.sum(:eight) + @user.posts.sum(:eleven) + @user.posts.sum(:fourteen) +  @user.posts.sum(:two) %>
             <% @icount=@user.posts.count(:created_at) %>
 
-            <% @ssum = @user.posts.sum(:three) + @user.posts.sum(:nine) + @user.posts.sum(:thirteen) + @user.posts.sum(:sixteen) + @user.posts.sum(:eighteen) %>// カラムのデータの合計値
+            <% @ssum = @user.posts.sum(:three) + @user.posts.sum(:nine) + @user.posts.sum(:thirteen) + @user.posts.sum(:sixteen) + @user.posts.sum(:eighteen) %>
             <% @scount=@user.posts.count(:created_at) %>
 
-            <% @csum = @user.posts.sum(:first) + @user.posts.sum(:five) + @user.posts.sum(:ten) + @user.posts.sum(:twelve) + @user.posts.sum(:fifteen) %>// カラムのデータの合計値
+            <% @csum = @user.posts.sum(:first) + @user.posts.sum(:five) + @user.posts.sum(:ten) + @user.posts.sum(:twelve) + @user.posts.sum(:fifteen) %>
             <% @ccount=@user.posts.count(:created_at) %>
                 {
-                label: "テスト",
+                label: "自己分析",
                 backgroundColor: 'rgba(122,255,129,0.2)',
-                borderColor: '#000',
+                //borderColor: '#000',
                 data: [<%= @dsum.to_f/@dcount %>, <%= @isum.to_f/@icount %>, <%= @ssum.to_f/@scount %>, <%= @csum.to_f/@ccount %>]
                 },
             ]
@@ -44,91 +51,104 @@
 
         </script>
     </div>
-
-
-
-
-    <div class ="box2" >
-    <h1>↓他己分析</h1>
-        <canvas id="yourChart" width="50%"></canvas>
-        <script>
-
-        var ctx = document.getElementById("yourChart");
-        var yourChart = new Chart(ctx, {
-        type: 'radar',
-        data: {
-            labels: ["D", "I", "S", "C"],
-            datasets: 
-            [
-            <% @dsum = @user.appearances.sum(:four) + @user.appearances.sum(:seven) + @user.appearances.sum(:seventeen) + @user.appearances.sum(:nineteen) + @user.appearances.sum(:twenty) %>// カラムのデータの合計値
-            <% @dcount=@user.appearances.count(:created_at) %> 
-
-            <% @isum = @user.appearances.sum(:six) + @user.appearances.sum(:eight) + @user.appearances.sum(:eleven) + @user.appearances.sum(:fourteen) +  @user.appearances.sum(:two) %>// カラムのデータの合計値
-            <% @icount=@user.appearances.count(:created_at) %>
-
-            <% @ssum = @user.appearances.sum(:three) + @user.appearances.sum(:nine) + @user.appearances.sum(:thirteen) + @user.appearances.sum(:sixteen) + @user.appearances.sum(:eighteen) %>// カラムのデータの合計値
-            <% @scount=@user.appearances.count(:created_at) %>
-
-            <% @csum = @user.appearances.sum(:first) + @user.appearances.sum(:five) + @user.appearances.sum(:ten) + @user.appearances.sum(:twelve) + @user.appearances.sum(:fifteen) %>// カラムのデータの合計値
-            <% @ccount=@user.appearances.count(:created_at) %>
-                {
-                label: "テスト",
-                backgroundColor: 'rgba(122,255,129,0.2)',
-                borderColor: '#000',
-                data: [<%= @dsum.to_f/@dcount %>, <%= @isum.to_f/@icount %>, <%= @ssum.to_f/@scount %>, <%= @csum.to_f/@ccount %>]
-                },
-            ]
-        },
-        options: {
-            scale: {
-                ticks: {
-                    suggestedMin: 0,
-                    suggestedMax: 20
-                }
-            }
-        }
-        });
-
-        </script>
-    </div>
-</div>
 
     <br>
 
-    <% if user_signed_in? %>
-        <%= button_to "マイページへ",  user_path,method: :get,class:'btn btn-dark' %>
-    <% end %>
 
-    <%= link_to 'New Post', new_post_path %>
+<% if @user.appearances.blank? %>
+    <p>友達に診断してもらいたい人は</p>
+    <p>以下のリンクをコピーして友達に診断してもらおう！</p>
+        <textarea id="bar" readonly>
+            <%# "#{user_url(public_uid: current_user.public_uid)}" %>
+            <%= "#{appearance_url(public_uid: current_user.public_uid)}" %>
+        </textarea>
+        <br>
+        <button onclick="copyToClipboard()">リンクをコピー</button><br>
 
-    <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
 
-    
-<%= link_to "post一覧に戻る", posts_path %>
-<%= @user.email %>
+        <script>
+            function copyToClipboard() {
+                // コピー対象をJavaScript上で変数として定義する
+                var copyTarget = document.getElementById("bar");
+
+                // コピー対象のテキストを選択する
+                copyTarget.select();
+
+                // 選択しているテキストをクリップボードにコピーする
+                document.execCommand("Copy");
+
+                alert("コピーしました! : " + copyTarget.value);
+            }
+        </script>
+
+<% else %>
+
+        <div class ="box2" >
+            <h1>他己分析</h1>
+                <canvas id="yourChart" width="50%"></canvas>
+                <script>
+
+                var ctx = document.getElementById("yourChart");
+                var yourChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ["D型", "I型", "S型", "C型"],
+                    datasets: 
+                    [
+                    <% @dsum = @user.appearances.sum(:four) + @user.appearances.sum(:seven) + @user.appearances.sum(:seventeen) + @user.appearances.sum(:nineteen) + @user.appearances.sum(:twenty) %>
+                    <% @dcount=@user.appearances.count(:created_at) %> 
+
+                    <% @isum = @user.appearances.sum(:six) + @user.appearances.sum(:eight) + @user.appearances.sum(:eleven) + @user.appearances.sum(:fourteen) +  @user.appearances.sum(:two) %>
+                    <% @icount=@user.appearances.count(:created_at) %>
+
+                    <% @ssum = @user.appearances.sum(:three) + @user.appearances.sum(:nine) + @user.appearances.sum(:thirteen) + @user.appearances.sum(:sixteen) + @user.appearances.sum(:eighteen) %>
+                    <% @scount=@user.appearances.count(:created_at) %>
+
+                    <% @csum = @user.appearances.sum(:first) + @user.appearances.sum(:five) + @user.appearances.sum(:ten) + @user.appearances.sum(:twelve) + @user.appearances.sum(:fifteen) %>
+                    <% @ccount=@user.appearances.count(:created_at) %>
+                        {
+                        label: "他己分析",
+                        backgroundColor: 'rgba(122,255,129,0.2)',
+                        //borderColor: '#000',
+                        data: [<%= @dsum.to_f/@dcount %>, <%= @isum.to_f/@icount %>, <%= @ssum.to_f/@scount %>, <%= @csum.to_f/@ccount %>]
+                        },
+                    ]
+                },
+                options: {
+                    scale: {
+                        ticks: {
+                            suggestedMin: 0,
+                            suggestedMax: 20
+                        }
+                    }
+                }
+                });
+                </script>
+            </div>
+        </div>
+
+        <p>友達に診断してもらいたい人は</p>
+    <p>以下のリンクをコピーして友達に診断してもらおう！</p>
+        <textarea id="bar" readonly>
+            <%# "#{user_url(public_uid: current_user.public_uid)}" %>
+            <%= "#{appearance_url(public_uid: current_user.public_uid)}" %>
+        </textarea>
+        <br>
+        <button onclick="copyToClipboard()">リンクをコピー</button><br>
 
 
-<textarea id="bar" readonly>
-    <%# "#{user_url(public_uid: current_user.public_uid)}" %>
-    <%= "#{appearance_url(public_uid: current_user.public_uid)}" %>
-</textarea>
-<br>
-<button onclick="copyToClipboard()">リンクをコピー</button><br>
+        <script>
+            function copyToClipboard() {
+                // コピー対象をJavaScript上で変数として定義する
+                var copyTarget = document.getElementById("bar");
 
-<!-- bodyタグ内の下部に以下を入力する -->
+                // コピー対象のテキストを選択する
+                copyTarget.select();
 
-<script>
-    function copyToClipboard() {
-        // コピー対象をJavaScript上で変数として定義する
-        var copyTarget = document.getElementById("bar");
+                // 選択しているテキストをクリップボードにコピーする
+                document.execCommand("Copy");
 
-        // コピー対象のテキストを選択する
-        copyTarget.select();
-
-        // 選択しているテキストをクリップボードにコピーする
-        document.execCommand("Copy");
-
-        // コピーをお知らせする
-        alert("コピーしました! : " + copyTarget.value);
-    }
-</script>
+                alert("コピーしました! : " + copyTarget.value);
+            }
+        </script>
+<% end %>

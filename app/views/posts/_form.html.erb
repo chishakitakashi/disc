@@ -175,3 +175,7 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+<% if user_signed_in? %>
+        <%= button_to "マイページへ",  user_path,method: :get,class:'btn btn-dark' %>
+<% end %>

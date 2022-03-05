@@ -11,164 +11,445 @@
     </div>
   <% end %>
 
+
   <div class="field">
-    <p>first</p>
-    <%= form.radio_button :first, :"4" %>
-    <%= form.radio_button :first, :"3" %>
-    <%= form.radio_button :first, :"2" %>
-    <%= form.radio_button :first, :"1" %>
+    <p>①自己主張することが下手だと思う</p>
+    <div class = "box">
+      <div>
+        <%= form.label(:first, "4")  %>
+        <%= form.radio_button :first, :"4" %>
+      </div>
+        <div>
+        <%= form.label(:first, "3")  %>
+        <%= form.radio_button :first, :"3" %>
+      </div>
+        <div>
+        <%= form.label(:first, "2")  %>
+        <%= form.radio_button :first, :"2" %>
+      </div>
+        <div>
+        <%= form.label(:first, "1")  %>
+        <%= form.radio_button :first, :"1" %>
+      </div>
+    </div>
   </div>
 
   <div class="field">
-    <p>two</p>
-    <%= form.radio_button :two, :"4" %>
-    <%= form.radio_button :two, :"3" %>
-    <%= form.radio_button :two, :"2" %>
-    <%= form.radio_button :two, :"1" %>
+    <p>②常に未来に対して情熱を持ってる方だ</p>
+    <div class = "box">
+      <div>
+        <%= form.label(:two, "4")  %>
+        <%= form.radio_button :two, :"4" %>
+      </div>
+        <div>
+        <%= form.label(:two, "3")  %>
+        <%= form.radio_button :two, :"3" %>
+      </div>
+        <div>
+        <%= form.label(:two, "2")  %>
+        <%= form.radio_button :two, :"2" %>
+      </div>
+        <div>
+        <%= form.label(:two, "1")  %>
+        <%= form.radio_button :two, :"1" %>
+      </div>
+    </div>
   </div>
 
   <div class="field">
-    <p>three</p>
-    <%= form.radio_button :three, :"4" %>
-    <%= form.radio_button :three, :"3" %>
-    <%= form.radio_button :three, :"2" %>
-    <%= form.radio_button :three, :"1" %>
+    <p>③他人のためにしたことを感謝されないと悔しく思うことがよくある</p>
+    <div class = "box">
+      <div>
+        <%= form.label(:three, "4")  %>
+        <%= form.radio_button :three, :"4" %>
+      </div>
+        <div>
+        <%= form.label(:three, "3")  %>
+        <%= form.radio_button :three, :"3" %>
+      </div>
+        <div>
+        <%= form.label(:three, "2")  %>
+        <%= form.radio_button :three, :"2" %>
+      </div>
+        <div>
+        <%= form.label(:three, "1")  %>
+        <%= form.radio_button :three, :"1" %>
+      </div>
+    </div>
   </div>
 
   <div class="field">
-    <p>four</p>
-    <%= form.radio_button :four, :"4" %>
-    <%= form.radio_button :four, :"3" %>
-    <%= form.radio_button :four, :"2" %>
-    <%= form.radio_button :four, :"1" %>
+    <p>④いやなことはいやと、はっきり言える</p>
+    <div class = "box">
+      <div>
+        <%= form.label(:four, "4")  %>
+        <%= form.radio_button :four, :"4" %>
+      </div>
+        <div>
+        <%= form.label(:four, "3")  %>
+        <%= form.radio_button :four, :"3" %>
+      </div>
+        <div>
+        <%= form.label(:four, "2")  %>
+        <%= form.radio_button :four, :"2" %>
+      </div>
+        <div>
+        <%= form.label(:four, "1")  %>
+        <%= form.radio_button :four, :"1" %>
+      </div>
+    </div>
   </div>
 
   <div class="field">
-    <p>five</p>
-    <%= form.radio_button :five, :"4" %>
-    <%= form.radio_button :five, :"3" %>
-    <%= form.radio_button :five, :"2" %>
-    <%= form.radio_button :five, :"1" %>
+    <p>⑤人にはなかなか気を許さない</p>
+    <div class = "box">
+      <div>
+        <%= form.label(:five, "4")  %>
+        <%= form.radio_button :five, :"4" %>
+      </div>
+        <div>
+        <%= form.label(:five, "3")  %>
+        <%= form.radio_button :five, :"3" %>
+      </div>
+        <div>
+        <%= form.label(:five, "2")  %>
+        <%= form.radio_button :five, :"2" %>
+      </div>
+        <div>
+        <%= form.label(:five, "1")  %>
+        <%= form.radio_button :five, :"1" %>
+      </div>
+    </div>
   </div>
 
   <div class="field">
-    <p>six</p>
-    <%= form.radio_button :six, :"4" %>
-    <%= form.radio_button :six, :"3" %>
-    <%= form.radio_button :six, :"2" %>
-    <%= form.radio_button :six, :"1" %>
+    <p>⑥人から楽しい人だとよく言われる</p>
+    <div class = "box">
+      <div>
+        <%= form.label(:six, "4")  %>
+        <%= form.radio_button :six, :"4" %>
+      </div>
+        <div>
+        <%= form.label(:six, "3")  %>
+        <%= form.radio_button :six, :"3" %>
+      </div>
+        <div>
+        <%= form.label(:six, "2")  %>
+        <%= form.radio_button :six, :"2" %>
+      </div>
+        <div>
+        <%= form.label(:six, "1")  %>
+        <%= form.radio_button :six, :"1" %>
+      </div>
+    </div>
   </div>
   
   <div class="field">
-    <p>seven</p>
-    <%= form.radio_button :seven, :"4" %>
-    <%= form.radio_button :seven, :"3" %>
-    <%= form.radio_button :seven, :"2" %>
-    <%= form.radio_button :seven, :"1" %>
+    <p>⑦短い時間にできるだけ多くのことをしようとする</p>
+    <div class = "box">
+      <div>
+        <%= form.label(:seven, "4")  %>
+        <%= form.radio_button :seven, :"4" %>
+      </div>
+        <div>
+        <%= form.label(:seven, "3")  %>
+        <%= form.radio_button :seven, :"3" %>
+      </div>
+        <div>
+        <%= form.label(:seven, "2")  %>
+        <%= form.radio_button :seven, :"2" %>
+      </div>
+        <div>
+        <%= form.label(:seven, "1")  %>
+        <%= form.radio_button :seven, :"1" %>
+      </div>
+    </div>
   </div>
 
   <div class="field">
-    <p>eight</p>
-    <%= form.radio_button :eight, :"4" %>
-    <%= form.radio_button :eight, :"3" %>
-    <%= form.radio_button :eight, :"2" %>
-    <%= form.radio_button :eight, :"1" %>
+    <p>⑧失敗しても立ち直りが早い</p>
+    <div class = "box">
+      <div>
+        <%= form.label(:eight, "4")  %>
+        <%= form.radio_button :eight, :"4" %>
+      </div>
+        <div>
+        <%= form.label(:eight, "3")  %>
+        <%= form.radio_button :eight, :"3" %>
+      </div>
+        <div>
+        <%= form.label(:eight, "2")  %>
+        <%= form.radio_button :eight, :"2" %>
+      </div>
+        <div>
+        <%= form.label(:eight, "1")  %>
+        <%= form.radio_button :eight, :"1" %>
+      </div>
+    </div>
   </div>
 
   <div class="field">
-    <p>nine</p>
-    <%= form.radio_button :nine, :"4" %>
-    <%= form.radio_button :nine, :"3" %>
-    <%= form.radio_button :nine, :"2" %>
-    <%= form.radio_button :nine, :"1" %>
+    <p>⑨人からものを頼まれるとなかなかNOと言えない</p>
+    <div class = "box">
+      <div>
+        <%= form.label(:nine, "4")  %>
+        <%= form.radio_button :nine, :"4" %>
+      </div>
+        <div>
+        <%= form.label(:nine, "3")  %>
+        <%= form.radio_button :nine, :"3" %>
+      </div>
+        <div>
+        <%= form.label(:nine, "2")  %>
+        <%= form.radio_button :nine, :"2" %>
+      </div>
+        <div>
+        <%= form.label(:nine, "1")  %>
+        <%= form.radio_button :nine, :"1" %>
+      </div>
+    </div>
   </div>
   
   <div class="field">
-    <p>ten</p>
-    <%= form.radio_button :ten, :"4" %>
-    <%= form.radio_button :ten, :"3" %>
-    <%= form.radio_button :ten, :"2" %>
-    <%= form.radio_button :ten, :"1" %>
+    <p>⑩たくさんの情報を検討してから決断をくだす</p>
+    <div class = "box">
+      <div>
+        <%= form.label(:ten, "4")  %>
+        <%= form.radio_button :ten, :"4" %>
+      </div>
+        <div>
+        <%= form.label(:ten, "3")  %>
+        <%= form.radio_button :ten, :"3" %>
+      </div>
+        <div>
+        <%= form.label(:ten, "2")  %>
+        <%= form.radio_button :ten, :"2" %>
+      </div>
+        <div>
+        <%= form.label(:ten, "1")  %>
+        <%= form.radio_button :ten, :"1" %>
+      </div>
+    </div>
   </div>
 
   <div class="field">
-    <p>eleven</p>
-    <%= form.radio_button :eleven, :"4" %>
-    <%= form.radio_button :eleven, :"3" %>
-    <%= form.radio_button :eleven, :"2" %>
-    <%= form.radio_button :eleven, :"1" %>
+    <p>⑪人の話を聞くよりも自分が話している事の方が多い</p>
+   <div class = "box">
+      <div>
+        <%= form.label(:eleven, "4")  %>
+        <%= form.radio_button :eleven, :"4" %>
+      </div>
+        <div>
+        <%= form.label(:eleven, "3")  %>
+        <%= form.radio_button :eleven, :"3" %>
+      </div>
+        <div>
+        <%= form.label(:eleven, "2")  %>
+        <%= form.radio_button :eleven, :"2" %>
+      </div>
+        <div>
+        <%= form.label(:eleven, "1")  %>
+        <%= form.radio_button :eleven, :"1" %>
+      </div>
+    </div>
   </div>
 
   <div class="field">
-    <p>twelve</p>
-    <%= form.radio_button :twelve, :"4" %>
-    <%= form.radio_button :twelve, :"3" %>
-    <%= form.radio_button :twelve, :"2" %>
-    <%= form.radio_button :twelve, :"1" %>
+    <p>⑫どちらかというと人見知りする方だ</p>
+   <div class = "box">
+      <div>
+        <%= form.label(:twelve, "4")  %>
+        <%= form.radio_button :twelve, :"4" %>
+      </div>
+        <div>
+        <%= form.label(:twelve, "3")  %>
+        <%= form.radio_button :twelve, :"3" %>
+      </div>
+        <div>
+        <%= form.label(:twelve, "2")  %>
+        <%= form.radio_button :twelve, :"2" %>
+      </div>
+        <div>
+        <%= form.label(:twelve, "1")  %>
+        <%= form.radio_button :twelve, :"1" %>
+      </div>
+    </div>
   </div>
 
   <div class="field">
-    <p>thirteen</p>
-    <%= form.radio_button :thirteen, :"4" %>
-    <%= form.radio_button :thirteen, :"3" %>
-    <%= form.radio_button :thirteen, :"2" %>
-    <%= form.radio_button :thirteen, :"1" %>
+    <p>⑬自分を人とよく比較する</p>
+   <div class = "box">
+      <div>
+        <%= form.label(:thirteen, "4")  %>
+        <%= form.radio_button :thirteen, :"4" %>
+      </div>
+        <div>
+        <%= form.label(:thirteen, "3")  %>
+        <%= form.radio_button :thirteen, :"3" %>
+      </div>
+        <div>
+        <%= form.label(:thirteen, "2")  %>
+        <%= form.radio_button :thirteen, :"2" %>
+      </div>
+        <div>
+        <%= form.label(:thirteen, "1")  %>
+        <%= form.radio_button :thirteen, :"1" %>
+      </div>
+    </div>
   </div>
 
   <div class="field">
-    <p>fourteen</p>
-    <%= form.radio_button :fourteen, :"4" %>
-    <%= form.radio_button :fourteen, :"3" %>
-    <%= form.radio_button :fourteen, :"2" %>
-    <%= form.radio_button :fourteen, :"1" %>
+    <p>⑭変化に強く適応力がある</p>
+   <div class = "box">
+      <div>
+        <%= form.label(:fourteen, "4")  %>
+        <%= form.radio_button :fourteen, :"4" %>
+      </div>
+        <div>
+        <%= form.label(:fourteen, "3")  %>
+        <%= form.radio_button :fourteen, :"3" %>
+      </div>
+        <div>
+        <%= form.label(:fourteen, "2")  %>
+        <%= form.radio_button :fourteen, :"2" %>
+      </div>
+        <div>
+        <%= form.label(:fourteen, "1")  %>
+        <%= form.radio_button :fourteen, :"1" %>
+      </div>
+    </div>
   </div>
 
   <div class="field">
-    <p>fifteen</p>
-    <%= form.radio_button :fifteen, :"4" %>
-    <%= form.radio_button :fifteen, :"3" %>
-    <%= form.radio_button :fifteen, :"2" %>
-    <%= form.radio_button :fifteen, :"1" %>
+    <p>⑮何事も自分の感情を表現することが苦手だ</p>
+   <div class = "box">
+      <div>
+        <%= form.label(:fifteen, "4")  %>
+        <%= form.radio_button :fifteen, :"4" %>
+      </div>
+        <div>
+        <%= form.label(:fifteen, "3")  %>
+        <%= form.radio_button :fifteen, :"3" %>
+      </div>
+        <div>
+        <%= form.label(:fifteen, "2")  %>
+        <%= form.radio_button :fifteen, :"2" %>
+      </div>
+        <div>
+        <%= form.label(:fifteen, "1")  %>
+        <%= form.radio_button :fifteen, :"1" %>
+      </div>
+    </div>
   </div>
 
   <div class="field">
-    <p>sixteen</p>
-    <%= form.radio_button :sixteen, :"4" %>
-    <%= form.radio_button :sixteen, :"3" %>
-    <%= form.radio_button :sixteen, :"2" %>
-    <%= form.radio_button :sixteen, :"1" %>
+    <p>⑯相手の好き嫌いにかかわらず、人に世話をしてしまうほうだ</p>
+   <div class = "box">
+      <div>
+        <%= form.label(:sixteen, "4")  %>
+        <%= form.radio_button :sixteen, :"4" %>
+      </div>
+        <div>
+        <%= form.label(:sixteen, "3")  %>
+        <%= form.radio_button :sixteen, :"3" %>
+      </div>
+        <div>
+        <%= form.label(:sixteen, "2")  %>
+        <%= form.radio_button :sixteen, :"2" %>
+      </div>
+        <div>
+        <%= form.label(:sixteen, "1")  %>
+        <%= form.radio_button :sixteen, :"1" %>
+      </div>
+    </div>
   </div>
 
   <div class="field">
-    <p>seventeen</p>
-    <%= form.radio_button :seventeen, :"4" %>
-    <%= form.radio_button :seventeen, :"3" %>
-    <%= form.radio_button :seventeen, :"2" %>
-    <%= form.radio_button :seventeen, :"1" %>
+    <p>⑰自分が思ったことはストレートに言う</p>
+   <div class = "box">
+      <div>
+        <%= form.label(:seventeen, "4")  %>
+        <%= form.radio_button :seventeen, :"4" %>
+      </div>
+        <div>
+        <%= form.label(:seventeen, "3")  %>
+        <%= form.radio_button :seventeen, :"3" %>
+      </div>
+        <div>
+        <%= form.label(:seventeen, "2")  %>
+        <%= form.radio_button :seventeen, :"2" %>
+      </div>
+        <div>
+        <%= form.label(:seventeen, "1")  %>
+        <%= form.radio_button :seventeen, :"1" %>
+      </div>
+    </div>
   </div>
   
   <div class="field">
-    <p>eightteen</p>
-    <%= form.radio_button :eightteen, :"4" %>
-    <%= form.radio_button :eightteen, :"3" %>
-    <%= form.radio_button :eightteen, :"2" %>
-    <%= form.radio_button :eightteen, :"1" %>
+    <p>⑱他人と一緒にいると、自分のことは後回しになることが多い</p>
+   <div class = "box">
+      <div>
+        <%= form.label(:eighteen, "4")  %>
+        <%= form.radio_button :eighteen, :"4" %>
+      </div>
+        <div>
+        <%= form.label(:eighteen, "3")  %>
+        <%= form.radio_button :eighteen, :"3" %>
+      </div>
+        <div>
+        <%= form.label(:eighteen, "2")  %>
+        <%= form.radio_button :eighteen, :"2" %>
+      </div>
+        <div>
+        <%= form.label(:eighteen, "1")  %>
+        <%= form.radio_button :eighteen, :"1" %>
+      </div>
+    </div>
   </div>
 
   <div class="field">
-    <p>nineteen</p>
-    <%= form.radio_button :nineteen, :"4" %>
-    <%= form.radio_button :nineteen, :"3" %>
-    <%= form.radio_button :nineteen, :"2" %>
-    <%= form.radio_button :nineteen, :"1" %>
+    <p>⑲競争心が強い</p>
+  <div class = "box">
+      <div>
+        <%= form.label(:ninteen, "4")  %>
+        <%= form.radio_button :ninteen, :"4" %>
+      </div>
+        <div>
+        <%= form.label(:ninteen, "3")  %>
+        <%= form.radio_button :ninteen, :"3" %>
+      </div>
+        <div>
+        <%= form.label(:ninteen, "2")  %>
+        <%= form.radio_button :ninteen, :"2" %>
+      </div>
+        <div>
+        <%= form.label(:ninteen, "1")  %>
+        <%= form.radio_button :ninteen, :"1" %>
+      </div>
+    </div>
   </div>
 
   <div class="field">
-    <p>twenty</p>
-    <%= form.radio_button :twenty, :"4" %>
-    <%= form.radio_button :twenty, :"3" %>
-    <%= form.radio_button :twenty, :"2" %>
-    <%= form.radio_button :twenty, :"1" %>
+    <p>⑳何事も完全にしないと気が済まない</p>
+   <div class = "box">
+      <div>
+        <%= form.label(:twenty, "4")  %>
+        <%= form.radio_button :twenty, :"4" %>
+      </div>
+        <div>
+        <%= form.label(:twenty, "3")  %>
+        <%= form.radio_button :twenty, :"3" %>
+      </div>
+        <div>
+        <%= form.label(:twenty, "2")  %>
+        <%= form.radio_button :twenty, :"2" %>
+      </div>
+        <div>
+        <%= form.label(:twenty, "1")  %>
+        <%= form.radio_button :twenty, :"1" %>
+      </div>
+    </div>
   </div>
   
   <div class="actions">

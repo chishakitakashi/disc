@@ -1,5 +1,6 @@
 class AppearancesController < ApplicationController
   before_action :set_appearance, only: %i[ show edit update destroy ]
+
   
   # GET /appearances/new
   def new

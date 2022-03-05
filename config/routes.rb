@@ -6,7 +6,13 @@ Rails.application.routes.draw do
 
   
   devise_for :users
-  resources :posts
+  
+  resources :posts do
+    member do
+      get :top
+    end 
+  end
+
   get 'users/show' => 'users#show' ,as: 'user'
   resources :users
   root"users#show"

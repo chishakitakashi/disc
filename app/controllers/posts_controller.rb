@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :top
   before_action :set_post, only: %i[ show edit update destroy ]
+
+  def top
+  end
 
   # GET /posts or /posts.json
   def index

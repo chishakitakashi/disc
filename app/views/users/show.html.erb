@@ -1,13 +1,15 @@
-<h1>マイページ <%= @user.email %></h1>
-
-<%= link_to 'New Post', new_post_path %>
-
-<%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
-
-<%= link_to "post一覧に戻る", posts_path %>
-
+<%= stylesheet_link_tag 'users', :media => "all" %>
 
 <div class ="box1" >
+<h1>マイページ <%= @user.email %></h1><br>
+<%= link_to 'トップページへ', top_path %><br>
+
+<% if @user.posts.blank? %>
+    <%= link_to '自己分析をする', new_post_path %>
+<% end %>
+
+<%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+<br>
     <div class ="box2" >
     <h1>自己分析</h1>
         <canvas id="myChart" width="50%"></canvas>
@@ -152,3 +154,5 @@
             }
         </script>
 <% end %>
+
+<%# link_to "post一覧に戻る", posts_path %>

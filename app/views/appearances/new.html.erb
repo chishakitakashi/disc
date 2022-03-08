@@ -1,6 +1,7 @@
-<h1>他己分析</h1>
-
-
+<h1>他己分析</h1><br>
+<p>あなたから見て回答をお願いしてきた人はどのように見えますか？</p>
+<p>4点：とてもそう思う</p>
+<p>1点：とてもそうは思わない</p>
 <%= form_for @appearance, url: appearances_create_path do |form| %>
 
   <%= form.hidden_field :user_id, value: @user.id %>
@@ -449,7 +450,7 @@
   </div>
   
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "送信する" %>
   </div>
 <% end %>
 

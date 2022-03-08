@@ -17,8 +17,8 @@ class AppearancesController < ApplicationController
     @appearance = Appearance.new(appearance_params)
 
 
-      if @appearance.save!
-        redirect_to user_path
+      if @appearance.save
+        redirect_to top_path
       else
         #redirect_to appearance_craete_path(params[:public_uid])
         redirect_to user_path

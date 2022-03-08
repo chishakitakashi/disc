@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag 'users', :media => "all" %>
 
-<div class ="box1" >
+<div class ="box3" >
 <h1>マイページ <%= @user.email %></h1><br>
 <%= link_to 'トップページへ', top_path %><br>
 
@@ -10,7 +10,7 @@
 
 <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
 <br>
-    <div class ="box2" >
+    <div class ="box4" >
     <h1>自己分析</h1>
         <canvas id="myChart" width="50%"></canvas>
         <script>

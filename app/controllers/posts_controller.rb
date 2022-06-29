@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
 
   def top
+    @users = User.find(6, 7)
   end
 
   # GET /posts or /posts.json

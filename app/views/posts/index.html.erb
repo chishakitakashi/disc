@@ -54,3 +54,8 @@ var myChart = new Chart(ctx, {
 <%= link_to 'New Post', new_post_path %>
 
 <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+
+<% if user_signed_in? && current_user.admin? %>
+    <h4>Adminですよ</h4>
+    <h4>User.create!(name:  "kazuya", email: "kazuya@mail.com", password:  "ochibi", password_confirmation: "ochibi", admin: true)
+<% end %>
